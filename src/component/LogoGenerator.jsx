@@ -65,7 +65,7 @@ const LogoGenerator = () => {
                                 <input id="purple-logo" type="radio" value="#2C1752" name="logo"
                                        onChange={(e) => selectLogo(e, `${Purple}`)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label for="purple-logo"
+                                <label htmlFor="purple-logo"
                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
                                     src={Purple} alt="purple logo" width={150}/></label>
 
@@ -76,7 +76,7 @@ const LogoGenerator = () => {
                                 <input id="white-logo" type="radio" value="#8248E5" name="logo"
                                        onChange={(e) => selectLogo(e, `${White}`)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label for="white-logo"
+                                <label htmlFor="white-logo"
                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
                                     src={White} alt="purple logo" width={150}/> </label>
                             </div>
@@ -86,7 +86,7 @@ const LogoGenerator = () => {
                                 <input id="dark-logo" type="radio" value="#ffffff" name="logo"
                                        onChange={(e) => selectLogo(e, `${Dark}`)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label for="dark-logo"
+                                <label htmlFor="dark-logo"
                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
                                     src={Dark} alt="purple logo" width={150}/> </label>
                             </div>
