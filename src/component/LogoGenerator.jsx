@@ -10,7 +10,7 @@ const LogoGenerator = () => {
     const [logo, setLogo] = useState(Purple);
     const [preview, setPreview] = useState(null);
     const [trigger, setTrigger] = useState('#2C1752');
-    const [textColor, setTextColor] = useState('#2C1752')
+    const [textColor, setTextColor] = useState('#fff')
 
     //input function handler
     const handleChange = (e) => setCity(e.target.value)
@@ -24,8 +24,6 @@ const LogoGenerator = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        // Example code to generate logo based on city name
-        // Replace this with a real logo generation code
         setPreview(`${preview}, ${trigger}`);
         setTextColor(`${trigger}`)
     };
@@ -85,7 +83,7 @@ const LogoGenerator = () => {
                         </li>
                         <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
                             <div className="flex items-center p-3">
-                                <input id="dark-logo" type="radio" value="#8248E5" name="logo"
+                                <input id="dark-logo" type="radio" value="#ffffff" name="logo"
                                        onChange={(e) => selectLogo(e, `${Dark}`)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
                                 <label for="dark-logo"
@@ -121,10 +119,10 @@ const LogoGenerator = () => {
             {/* Logo preview before download */}
             <div className="row text-center">
                 <h3 className="mb-4 font-semibold text-secondary dark:text-secondary flex justify-center">Preview</h3>
-                {preview && <div className='container col-6'>
+                {preview && <div className='container col-2'>
                     <div className="card bg-dark text-white" ref={exportRef}>
-                        <img className="card-img card-img-top rounded-lg" src={logo} alt="Logo"/>
-                        <h1 className="text-white centered" style={{'color': `${textColor}`}}>{city}</h1>
+                        <img className="card-img card-img-top rounded-lg" src={logo} alt="Logo"  />
+                        <span className="text-white centered" style={{'color': `${textColor}`}}>{city}</span>
                     </div>
                     <br/>
                     <button onClick={() => exportAsImage(exportRef.current, `${city}-polygon-logo`)}
