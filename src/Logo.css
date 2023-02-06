@@ -4,18 +4,26 @@
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 10vmax;
+    font-size: 5vmax;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     font-family: sans-serif, Helvetica;
     text-transform: capitalize;
     line-height: 100%;
     width: 90%;
 }
+#logoPreview {
+    width: 50%;
+    margin: 0 auto;
+}
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
     .centered {
         font-size: 250%;
         /*width: 90%;*/
     }
+    #logoPreview {
+        width: 90%;
+    }
 }
+

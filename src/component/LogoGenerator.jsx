@@ -53,7 +53,7 @@ const LogoGenerator = () => {
     const exportRef = useRef();
 
     return (
-        <div className="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mb-8 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mb-8 gap-8 ">
             <form onSubmit={handleSubmit}>
                 <h3 className="mb-4 font-semibold text-secondary dark:text-secondary flex justify-center">Select Logo
                     Type</h3>
@@ -117,20 +117,20 @@ const LogoGenerator = () => {
             </form>
 
             {/* Logo preview before download */}
-            <div className="row text-center">
+            <div className=" text-center " >
                 <h3 className="mb-4 font-semibold text-secondary dark:text-secondary flex justify-center">Preview</h3>
-                {preview && <div className='container col-2'>
-                    <div className="card bg-dark text-white" ref={exportRef}>
-                        <img className="card-img card-img-top rounded-lg" src={logo} alt="Logo"  />
-                        <span className="text-white centered" style={{'color': `${textColor}`}}>{city}</span>
+                    {preview && <div id='logoPreview'>
+                        <div className="card bg-dark text-white" ref={exportRef}>
+                            <img className="card-img card-img-top rounded-lg" src={logo} alt="Logo"/>
+                            <span className="text-white centered" style={{'color': `${textColor}`}}>{city}</span>
+                        </div>
+                        <br/>
+                        <button onClick={() => exportAsImage(exportRef.current, `${city}-polygon-logo`)}
+                                className="btn btn-primary justify-center">
+                            Download
+                        </button>
                     </div>
-                    <br/>
-                    <button onClick={() => exportAsImage(exportRef.current, `${city}-polygon-logo`)}
-                            className="btn btn-primary btn-lg justify-center">
-                        Download
-                    </button>
-                </div>
-                }
+                    }
             </div>
         </div>
     );
