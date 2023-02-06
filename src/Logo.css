@@ -16,6 +16,6 @@
 @media (max-width: 950px) {
     .centered {
         font-size: 250%;
-        width: 150%;
+        /*width: 90%;*/
     }
 }
