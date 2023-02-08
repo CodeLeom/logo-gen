@@ -1,3 +1,5 @@
+
+
 /* Centered text */
 .centered {
     position: absolute;
@@ -7,7 +9,6 @@
     font-size: 5vmax;
     font-weight: bold;
     text-align: left;
-    font-family: sans-serif, Helvetica;
     text-transform: capitalize;
     line-height: 100%;
     width: 90%;
