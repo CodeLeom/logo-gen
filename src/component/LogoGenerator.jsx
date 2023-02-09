@@ -81,7 +81,7 @@ const LogoGenerator = () => {
                                     src={White} alt="purple logo" width={150}/> </label>
                             </div>
                         </li>
-                        <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
+                        <li className="border-b border-white sm:border-b-0 sm:border-r-none dark:border-white">
                             <div className="flex items-center p-3">
                                 <input id="dark-logo" type="radio" value="#ffffff" name="logo"
                                        onChange={(e) => selectLogo(e, `${Dark}`)}
