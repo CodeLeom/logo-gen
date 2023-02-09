@@ -104,7 +104,7 @@ const LogoGenerator = () => {
                 <div className='form-control'>
                     <div className='relative'>
                         <label className='input-group'>
-                            <input type="text" value={city} placeholder="enter your city name" onChange={handleChange}
+                            <input type="text" value={city} placeholder="enter your city name" onChange={handleChange} maxLength="21"
                                    className="w-full pr-40 bg-neutral input input-lg text-primary"/>
                             <button type="submit"
                                     className="absolute top-0 right-0 rounded-l-none bg-secondary text-white w-25 btn btn-lg hover:bg-primary">Generate
