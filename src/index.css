@@ -8,8 +8,8 @@
 } */
 
 @font-face {
-    font-family: 'Roobert', sans-serif ;
-    src: url(./fonts/Roobert-Regular.ttf);
+    font-family: 'Roobert';
+    src: local('Roobert'), url(./fonts/Roobert-Bold.ttf) format('truetype');
 }
 
 body {

@@ -4,6 +4,7 @@ import White from '../assets/white-logo.png'
 import Dark from '../assets/dark-logo.png'
 import html2canvas from "html2canvas";
 import "../Logo.css"
+import '../index.css'
 
 const LogoGenerator = () => {
     const [city, setCity] = useState('');
