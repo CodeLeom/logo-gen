@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
-import Purple from '../assets/purple-logo.png'
-import White from '../assets/white-logo.png'
-import Dark from '../assets/dark-logo.png'
+import Purple from '../assets/purple.png'
+import White from '../assets/white.png'
+import Dark from '../assets/dark.png'
 import html2canvas from "html2canvas";
 import "../Logo.css"
 import '../index.css'
@@ -63,7 +63,7 @@ const LogoGenerator = () => {
                     <ul className="text-sm font-medium text-white bg-white border border-white rounded-lg sm:flex dark:bg-transparent dark:border-secondary dark:text-white">
                         <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
                             <div className="flex items-center p-3">
-                                <input id="purple-logo" type="radio" value="#2C1752" name="logo"
+                                <input id="purple-logo" type="radio" value="#ffffff" name="logo"
                                        onChange={(e) => selectLogo(e, `${Purple}`)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
                                 <label htmlFor="purple-logo"
