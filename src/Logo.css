@@ -38,15 +38,15 @@
 
 @media (max-width: 1200px) {
     .centered {
-        font-size: 5vmax;
-        top: 55%;
-        left: 50%;
+        font-size: 200%;
+        top: 60%;
+        left: 45%;
         /*width: 90%;*/
     }
     .rounded {
-        font-size: 5vmax;
+        font-size: 200%;
         top: 52%;
-        left: 52%;
+        left: 50%;
     }
     #logoPreview {
         width: 50%;
