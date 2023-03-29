@@ -39,10 +39,14 @@
 @media (max-width: 1200px) {
     .centered {
         font-size: 5vmax;
+        top: 55%;
+        left: 50%;
         /*width: 90%;*/
     }
     .rounded {
         font-size: 5vmax;
+        top: 52%;
+        left: 52%;
     }
     #logoPreview {
         width: 50%;
