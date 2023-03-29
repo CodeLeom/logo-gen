@@ -18,6 +18,19 @@
     width: 90%;
     margin-left: 15px;
 }
+.rounded {
+    position: absolute;
+    top: 52%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    /* font-family: 'Rokkitt', serif; */
+    font-size: 5vmax;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 100%;
+    width: 90%;
+}
 #logoPreview {
     width: 50%;
     margin: 0 auto;
@@ -29,7 +42,7 @@
         /*width: 90%;*/
     }
     #logoPreview {
-        width: 90%;
+        width: 50%;
     }
 }
 

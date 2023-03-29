@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import Purple from '../assets/purple.png'
 import White from '../assets/white.png'
 import Dark from '../assets/dark.png'
+import Round from '../assets/round.png'
 import html2canvas from "html2canvas";
 import "../Logo.css"
 import '../index.css'
@@ -12,15 +13,22 @@ const LogoGenerator = () => {
     const [preview, setPreview] = useState(null);
     const [trigger, setTrigger] = useState('#2C1752');
     const [textColor, setTextColor] = useState('#fff')
+    const [selClass, setSelClass] = useState('rounded')
 
     //input function handler
     const handleChange = (e) => setCity(e.target.value)
 
     //set logo src and city text color
-    const selectLogo = (e, img) => {
+    const selectLogo = (e, img, t) => {
         setLogo(`${img}`)
         setTrigger(e.target.value)
         setTextColor(e.target.value)
+        if(t===1){
+            setSelClass('centered')
+        }
+        if(t===2){
+            setSelClass('rounded')
+        }
     }
 
     const handleSubmit = event => {
@@ -60,36 +68,50 @@ const LogoGenerator = () => {
                     Type</h3>
                 {/* logo type selection */}
                 <div className='flex justify-center w-full'>
-                    <ul className="text-sm font-medium text-white bg-white border border-white rounded-lg sm:flex dark:bg-transparent dark:border-secondary dark:text-white">
-                        <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
-                            <div className="flex items-center p-3">
-                                <input id="purple-logo" type="radio" value="#ffffff" name="logo"
-                                       onChange={(e) => selectLogo(e, `${Purple}`)}
-                                       className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label htmlFor="purple-logo"
-                                       className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
-                                    src={Purple} alt="purple logo" width={150}/></label>
+                    <div>
+                        <ul className="text-sm font-medium text-white bg-white border border-white rounded-lg sm:flex dark:bg-transparent dark:border-secondary dark:text-white">
+                            <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
+                                <div className="flex items-center p-3">
+                                    <input id="purple-logo" type="radio" value="#ffffff" name="logo"
+                                        onChange={(e) => selectLogo(e, `${Purple}`, 1)}
+                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+                                    <label htmlFor="purple-logo"
+                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
+                                        src={Purple} alt="purple logo" width={150}/></label>
 
-                            </div>
-                        </li>
-                        <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
-                            <div className="flex items-center p-3">
-                                <input id="white-logo" type="radio" value="#8248E5" name="logo"
-                                       onChange={(e) => selectLogo(e, `${White}`)}
-                                       className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label htmlFor="white-logo"
-                                       className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
-                                    src={White} alt="purple logo" width={150}/> </label>
-                            </div>
-                        </li>
+                                </div>
+                            </li>
+                            <li className="border-b border-white sm:border-b-0 sm:border-r dark:border-white">
+                                <div className="flex items-center p-3">
+                                    <input id="white-logo" type="radio" value="#8248E5" name="logo"
+                                        onChange={(e) => selectLogo(e, `${White}`, 1)}
+                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+                                    <label htmlFor="white-logo"
+                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
+                                        src={White} alt="purple logo" width={150}/> </label>
+                                </div>
+                            </li>
+                            <li className="border-b border-white sm:border-b-0 sm:border-r-none dark:border-white">
+                                <div className="flex items-center p-3">
+                                    <input id="dark-logo" type="radio" value="#ffffff" name="logo"
+                                        onChange={(e) => selectLogo(e, `${Dark}`, 1)}
+                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+                                    <label htmlFor="dark-logo"
+                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
+                                        src={Dark} alt="purple logo" width={150}/> </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul style={{marginLeft: 10}} className=" text-sm font-medium text-white bg-white border border-white rounded-lg sm:flex dark:bg-transparent dark:border-secondary dark:text-white">
                         <li className="border-b border-white sm:border-b-0 sm:border-r-none dark:border-white">
                             <div className="flex items-center p-3">
-                                <input id="dark-logo" type="radio" value="#ffffff" name="logo"
-                                       onChange={(e) => selectLogo(e, `${Dark}`)}
+                                <input id="round-logo" type="radio" value="#ffffff" name="logo"
+                                       onChange={(e) => selectLogo(e, `${Round}`, 2)}
                                        className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-white dark:focus:ring-white dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-                                <label htmlFor="dark-logo"
+                                <label htmlFor="round-logo"
                                        className="w-full py-3 ml-2 text-sm font-medium text-white dark:text-white"><img
-                                    src={Dark} alt="purple logo" width={150}/> </label>
+                                    src={Round} alt="rounded logo" width={70}/> </label>
                             </div>
                         </li>
                     </ul>
@@ -105,7 +127,7 @@ const LogoGenerator = () => {
                 <div className='form-control'>
                     <div className='relative'>
                         <label className='input-group'>
-                            <input type="text" value={city} placeholder="enter your city name" onChange={handleChange} maxLength="21"
+                            <input type="text" value={city} placeholder="enter your city name" onChange={handleChange} maxLength="17"
                                    className="w-full pr-40 bg-neutral input input-lg text-primary"/>
                             <button type="submit"
                                     className="absolute top-0 right-0 rounded-l-none bg-secondary text-white w-25 btn btn-lg hover:bg-primary">Generate
@@ -123,7 +145,7 @@ const LogoGenerator = () => {
                     {preview && <div id='logoPreview'>
                         <div className="card bg-dark text-white" ref={exportRef}>
                             <img className="card-img card-img-top rounded-lg" src={logo} alt="Logo"/>
-                            <span className="text-white centered" style={{'color': `${textColor}`}}>{city}</span>
+                            <span className={"text-white "+selClass} style={{'color': `${textColor}`}}>{city}</span>
                         </div>
                         <br/>
                         <button onClick={() => exportAsImage(exportRef.current, `${city}-polygon-logo`)}
