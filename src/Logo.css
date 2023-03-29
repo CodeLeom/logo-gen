@@ -38,8 +38,11 @@
 
 @media (max-width: 1200px) {
     .centered {
-        font-size: 250%;
+        font-size: 5vmax;
         /*width: 90%;*/
+    }
+    .rounded {
+        font-size: 5vmax;
     }
     #logoPreview {
         width: 50%;
